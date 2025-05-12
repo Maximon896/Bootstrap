@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адаптивна Сітка</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <ul class="main-menu">
+        <li>Головна</li>
+        <li>Про нас
+          <ul class="sub-menu">
+            <li>Команда</li>
+            <li>Історія</li>
+          </ul>
+        </li>
+        <li>Контакти</li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <aside class="left">
+      <div class="slider">
+        <img src="img1.jpg" alt="Фото 1">
+        <img src="img2.jpg" alt="Фото 2">
+        <img src="img3.jpg" alt="Фото 3">
+        <img src="img4.jpg" alt="Фото 4">
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="accordion">
+        <div class="accordion-item">
+          <button>Розділ 1</button>
+          <div class="content">Вміст 1</div>
+        </div>
+        <div class="accordion-item">
+          <button>Розділ 2</button>
+          <div class="content">Вміст 2</div>
+        </div>
+      </section>
+
+      <form class="form">
+        <label>Ім'я <input type="text" required></label>
+        <label>Прізвище <input type="text" required></label>
+        <label>Email <input type="email" required></label>
+        <label>Телефон <input type="tel"></label>
+        <label>Повідомлення <textarea required></textarea></label>
+        <button type="submit">Надіслати</button>
+        <button type="reset">Очистити</button>
+      </form>
+    </main>
+
+    <aside class="right">
+      <p>Додаткова інформація або реклама</p>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 Ваш сайт. Всі права захищено.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.accordion button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        let content = btn.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
